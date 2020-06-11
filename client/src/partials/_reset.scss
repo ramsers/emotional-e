@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 16px;
+    font-family: 'Cabin', sans-serif;
+	font: inherit;
+	vertical-align: baseline;
+	color: #323232;
+	box-sizing: border-box;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Cabin', sans-serif;
+    background: -webkit-linear-gradient(-45deg, #c8adfe 1%,#c3bbfe 10%,#d8f8fd 90%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #c8adfe 1%,#c3bbfe 10%,#d8f8fd 90%);
+	overflow-x: hidden;
+}
+ol, ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
