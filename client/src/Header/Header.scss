@@ -1,0 +1,26 @@
+@import '../partials/partials.scss';
+
+.header {
+  &__wrap {
+      @include flex(row, center, "");
+      width: 100%;
+      padding:$rem-16;
+    flex-wrap: wrap;
+  }
+    &__logo-img {
+        @include sizing(225px, 50px);
+        margin-bottom: $rem-8;
+    }
+    &__nav {
+        @include sizing(100%, "");
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    &__nav-link {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #323232;
+        letter-spacing: .15rem;
+    }
+}
