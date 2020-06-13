@@ -42,6 +42,20 @@
         text-transform: uppercase;
         color: #323232;
         letter-spacing: .15rem;
+        &::after {
+            content: '';
+            display: block;
+            width: 0%;
+            margin-top: 5px;
+            height: 2px;
+            transition: width .3s ease-in-out;
+            background-color: #000;
+        }
+        &:hover::after {
+            width: 98%;
+            background-color: #000;
+            transition: width .3s ease-in-out;
+        }
         @include tablet {
             font-size: $rem-20;
             margin-left: 3rem;

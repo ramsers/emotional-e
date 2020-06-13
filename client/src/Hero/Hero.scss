@@ -13,11 +13,12 @@
         margin-top: 0;
     }
     &__wrap {
-        background-color: rgba(0,0,0,0.6); 
+        background-color: #AFAFAF;
+        opacity: .6; 
         z-index: 2;
         height: 100%;
         width: 100%;
-        transition: background .3s ease-in-out;
+        transition: background .5s ease-in-out;
         &:hover {
             background-color: rgba(0,0,0,0)
         }
