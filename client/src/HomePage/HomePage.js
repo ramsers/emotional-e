@@ -55,21 +55,21 @@ const API_URL = 'http://localhost:8080';
             <Hero/>
             <section className="emotions">
                 <div className="emotions__wrap">
-                    <Link  className="emotions__card-link" onClick={this.anxietyClick} to='/anxiety'>
+                    <Link  className="emotions__card-link emotions--anxiety" onClick={this.anxietyClick} to='/anxiety'>
                         <div  className="emotions__card">
                             Anxiety
                         </div>
                     </Link>
                     
                     
-                    <Link className="emotions__card-link" onClick={this.angerClick} to='/anger'>
+                    <Link className="emotions__card-link emotions--anger" onClick={this.angerClick} to='/anger'>
                         <div className="emotions__card">
                             Anger
                         </div>
                     </Link>
                     
                    
-                   <Link className="emotions__card-link" onClick={this.depressionClick} to='/depression'>
+                   <Link className="emotions__card-link emotions--depression" onClick={this.depressionClick} to='/depression'>
                         <div className="emotions__card">
                             Depression
                         </div>

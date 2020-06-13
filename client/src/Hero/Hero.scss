@@ -1,7 +1,7 @@
 @import '../partials/partials.scss';
 
 .hero {
-    @include sizing(100%, 55vw);
+    @include sizing(100%, 75vw);
     background-color: black;
     margin-top: $rem-8;
     margin-bottom: $rem-32;
@@ -10,17 +10,21 @@
     background-position: center center;
     background-repeat: no-repeat;
     @include tablet {
+        @include sizing(100%, 55vw);
         margin-top: 0;
     }
     &__wrap {
-        background-color: #AFAFAF;
-        opacity: .6; 
-        z-index: 2;
-        height: 100%;
-        width: 100%;
-        transition: background .5s ease-in-out;
-        &:hover {
-            background-color: rgba(0,0,0,0)
+            @include desktop {
+            background-color: #AFAFAF;
+            opacity: .6; 
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            transition: background .5s ease-in-out;
+                &:hover {
+                    background-color: rgba(0,0,0,0)
+                }
+            }
         }
-    }
+        
 }
