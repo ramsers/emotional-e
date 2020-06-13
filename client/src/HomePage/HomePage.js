@@ -56,22 +56,25 @@ const API_URL = 'http://localhost:8080';
             <section className="emotions">
                 <div className="emotions__wrap">
                     <Link  className="emotions__card-link emotions--anxiety" onClick={this.anxietyClick} to='/anxiety'>
-                        <div  className="emotions__card">
-                            Anxiety
+                        <div  className="emotions__card"></div>
+                        <div className="emotions__card-title-ctn">
+                                <h2 className="emotions__card-title">Anxiety</h2>
                         </div>
                     </Link>
                     
                     
                     <Link className="emotions__card-link emotions--anger" onClick={this.angerClick} to='/anger'>
-                        <div className="emotions__card">
-                            Anger
+                        <div className="emotions__card"></div>
+                        <div className="emotions__card-title-ctn">
+                                <h2 className="emotions__card-title">Anger</h2>
                         </div>
                     </Link>
                     
                    
                    <Link className="emotions__card-link emotions--depression" onClick={this.depressionClick} to='/depression'>
-                        <div className="emotions__card">
-                            Depression
+                        <div className="emotions__card"></div>
+                        <div className="emotions__card-title-ctn">
+                                <h2 className="emotions__card-title">Depression</h2>
                         </div>
                     </Link>
                 </div>

@@ -20,11 +20,13 @@
         }
     }
     &__card-link {
-        @include sizing(75%, 70vw);
+        @include sizing(60%, 70vw);
+        @include flex(row, center, center);
         background-color: #ffffff;
         margin-bottom: 1rem;
         border-radius: 22px;
-        opacity: .6;
+        z-index: 1;
+        position: relative;
         @include tablet {
             @include sizing(55%, 50vw);
         }
@@ -56,5 +58,28 @@
     &__card {
         @include sizing(100%, 100%);
         @include flex(column, "", center);
+        z-index: 1;
+        position: relative;
+    }
+    &__card-title-ctn {
+        @include sizing(70%, 50px);
+        @include flex(row, center, center);
+        background-color: 	#232b2b;
+        z-index: 3;
+        border-radius: 5px;
+        position: absolute;
+    }
+    &__card-title {
+        z-index: 3;
+        color: #ffffff;
+        font-size: $rem-16;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: .1rem;
+        @include tablet {
+            font-size: $rem-18;
+            letter-spacing: $rem-10;
+            text-transform: uppercase;
+        }
     }
 }
