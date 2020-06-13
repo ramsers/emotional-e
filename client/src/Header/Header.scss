@@ -20,12 +20,12 @@
   }
   &__logo {
       @include tablet {
-          @include sizing(50%, "");
+          @include sizing(50%, 55px);
       }
   }
     &__logo-img {
         @include sizing(225px, 50px);
-        margin-bottom: $rem-8;
+        margin-bottom: $rem-13;
     }
     &__nav {
         @include sizing(100%, "");

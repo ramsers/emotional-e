@@ -2,6 +2,7 @@ import React from 'react';
 import './HomePage.scss';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Hero from '../Hero/Hero';
 
 
 
@@ -50,6 +51,8 @@ const API_URL = 'http://localhost:8080';
      }
      render() {
         return(
+            <>
+            <Hero/>
             <section className="emotions">
                 <div className="emotions__wrap">
                     <Link  className="emotions__card-link" onClick={this.anxietyClick} to='/anxiety'>
@@ -73,6 +76,7 @@ const API_URL = 'http://localhost:8080';
                     </Link>
                 </div>
             </section>
+            </>
         )
      }
 }

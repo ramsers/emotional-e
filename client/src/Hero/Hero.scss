@@ -1,0 +1,25 @@
+@import '../partials/partials.scss';
+
+.hero {
+    @include sizing(100%, 55vw);
+    background-color: black;
+    margin-top: $rem-8;
+    margin-bottom: $rem-32;
+    background-image: url('./HeroAssets/hero-img-2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include tablet {
+        margin-top: 0;
+    }
+    &__wrap {
+        background-color: rgba(0,0,0,0.6); 
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        transition: background .3s ease-in-out;
+        &:hover {
+            background-color: rgba(0,0,0,0)
+        }
+    }
+}
