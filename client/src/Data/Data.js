@@ -6,22 +6,20 @@ const API_URL = 'http://localhost:8080/clicks';
 
 const EmotionData = () => {
     const [chartData, setChartData] = useState({});
-    const [emotionData, setEmotionData] = useState([]);
 
     const chart = () => {
-        let anxData = []
         axios.get(`${API_URL}`)
         .then(res => {
-            let anxietyData = res.data;
+            let anxietyData = res.data.anxietyClicks;
+            let angerData = res.data.angerClicks;
+            let depressionData = res.data.depressionClicks
             console.log(anxietyData);
-            let anxSum = anxietyData.map(click => click.clicks).reduce((prev, curr)=> prev + curr, 0)
-            console.log(anxSum)
             setChartData({
                 labels: ['Anxiety', 'Anger', 'Depression'],
                 datasets: [
                     {
                         label: 'Emotional State Split',
-                        data: [anxSum, 32, 54],
+                        data: [anxietyData, angerData, depressionData],
                         backgroundColor: ['#02efeb','#f1c3f7', '#fc2397' ]
                     }
                 ]
