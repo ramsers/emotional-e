@@ -28,7 +28,7 @@
         z-index: 1;
         position: relative;
         @include tablet {
-            @include sizing(55%, 50vw);
+            @include sizing(51%, 50vw);
         }
         @include desktop-small {
             @include sizing(30%, 30vw);
