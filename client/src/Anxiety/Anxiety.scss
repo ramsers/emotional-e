@@ -1,1 +1,56 @@
 @import '../partials/partials.scss';
+
+.anxiety {
+    width: 100vw;
+    height: 100%;
+    padding: 0 $rem-16 0 $rem-16;
+    &__wrap {
+        @include sizing(100%, 100%);
+        @include flex(row, center, "");
+        flex-wrap: wrap;
+    }
+    &__card {
+        border: 1px solid #AFAFAF;
+        margin-bottom: $rem-32;
+        width: 90%;
+        max-height: 175vw;
+        @include mobile {
+            height: 560px;
+        }
+    }
+    &__card-content-ctn {
+        padding: $rem-16;
+        overflow-wrap: break-word;
+        position: relative;
+        
+        @include mobile {
+            height: 68%;
+        }
+    }
+    &__img {
+        width: 100%;
+    }
+    &__type-ctn {
+        @include flex(row, space-between, center);
+        width: 38%;
+        margin-bottom: 1rem;
+    }
+    &__type {
+        font-weight: 600;
+    }
+    &__card-title {
+        font-size: $rem-18;
+        margin-bottom: $rem-16;
+    }
+    &__card-desc {
+        font-size: $rem-14;
+        margin-bottom: $rem-16;
+        line-height: $rem-16;
+        position: relative;
+        padding-bottom: 20px;
+    }
+    &__resource-link {
+        position: absolute;
+        bottom: 15px;
+    }
+}
