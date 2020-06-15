@@ -3,7 +3,6 @@ import './Anxiety.scss';
 import axios from 'axios';
 import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
-import {Link} from 'react-router-dom';
 
 const API_URL = 'http://localhost:8080/anxiety';
 
@@ -54,9 +53,9 @@ const Anxiety = () => {
                                         )
                                     }
                                 }) ()}
-                                <h4 className="anxiety__card-title">{resource.title}</h4>
-                                <p className="anxiety__card-desc">{resource.description}</p>
-                                <Link to={resource.link} className="anxiety__resource-link">Link to the {resource.type}</Link>
+                                    <h4 className="anxiety__card-title">{resource.title}</h4>
+                                    <p className="anxiety__card-desc">{resource.description}</p>
+                                    <a href={resource.link} className="anxiety__resource-link">Link to the {resource.type}</a>
                                 </div>
                             </div>
                         )

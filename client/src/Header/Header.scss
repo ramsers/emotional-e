@@ -24,7 +24,7 @@
       }
   }
     &__logo-img {
-        @include sizing(225px, 50px);
+        @include sizing(300px, 50px);
         margin-bottom: $rem-13;
     }
     &__nav {

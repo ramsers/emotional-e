@@ -1,0 +1,110 @@
+@import '../partials/partials.scss';
+
+.anger {
+    width: 100vw;
+    height: 100%;
+    padding: 0 $rem-16 0 $rem-16;
+    @include tablet {
+        height: 100%;
+    }
+    @include desktop {
+        height:100%;
+        padding: 0 $rem-48 0 $rem-48;
+    }
+    &__wrap {
+        @include sizing(100%, 100%);
+        @include flex(row, center, "");
+        flex-wrap: wrap;
+        @include desktop-small {
+            height:100%;
+            justify-content: space-between;
+        }
+        @include desktop {
+            height:100%;
+            justify-content: space-between;
+        }
+    }
+    &__card {
+        border: 1px solid #AFAFAF;
+        margin-bottom: $rem-32;
+        width: 90%;
+        max-height: 175vw;
+        position: relative;
+        @include mobile-only {
+            height: 560px;
+        }
+        @include tablet {
+            width:51%;
+            height:540px;
+        }
+        @include desktop-small {
+            width:30%;
+            height:575px;
+        }
+        @include desktop {
+            width: 30%;
+            height: 585px;
+        }
+    }
+    &__card-content-ctn {
+        padding: $rem-16;
+        overflow-wrap: break-word;
+        
+    }
+    &__img {
+        width: 100%;
+    }
+    &__type-ctn {
+        @include flex(row, space-between, center);
+        width: 38%;
+        margin-bottom: 1rem;
+        @include tablet {
+            width: 22%;
+        }
+        @include desktop-small {
+            width: 29%;
+        }
+        @include desktop {
+            width: 26%;
+        }
+    }
+    &__type {
+        font-weight: 600;
+        color: #0095FF;
+    }
+    &__card-title {
+        font-size: $rem-18;
+        margin-bottom: $rem-16;
+        font-weight: 700;
+    }
+    &__card-desc {
+        font-size: 0.775rem;
+        margin-bottom: 1rem;
+        line-height: 1.15rem;
+        position: relative;
+        padding-bottom: 20px;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        @include tablet {
+            font-size: 0.72rem;
+        }
+        @include desktop-small {
+            font-size: 0.875rem;
+        }
+        @include desktop {
+            font-size: $rem-14;
+        }
+    }
+    &__resource-link {
+        position: absolute;
+        bottom: 17px;
+        color: #0095FF;
+        @include desktop-small {
+            font-size:0.875rem;
+        }
+        @include desktop {
+            font-size:0.9rem;
+            
+        }
+    }
+}
