@@ -1,0 +1,95 @@
+@import '../partials/partials.scss';
+
+
+.modal{
+    overflow: auto;
+    
+    &__button {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        position: fixed;
+        right: 30px;
+        top: 295px;
+        background-color: #0095FF;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__window {
+        @include sizing(90%, 400px);
+        position: fixed;
+        top: 15%;
+        left: 5%;
+        background: url('../NotesModal/NotesModalAssets/modal-bg-mobile-3.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background: #f4f4f4;
+        border-radius: 5px;
+        border: 1px solid #000;
+        &:focus {
+            outline: none;
+        } 
+    }
+    &__ctn {
+        @include flex(column, "", center);
+        padding: $rem-16;
+        height:100%;
+    }
+    &__header {
+        font-size: $rem-18;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: $rem-24;
+    }
+    &__form {
+        @include flex(column, "", center);
+        @include sizing(100%, 100%);
+    }
+    &__label {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: $rem-16;
+        margin-bottom: $rem-16;
+    }
+    &__title-input {
+        @include sizing(100%, 35px);
+        border-radius: 5px;
+        border: 1px solid #AFAFAF;
+        margin-bottom: $rem-16;
+    }
+    &__notes-input {
+        @include sizing(100%, 120px);
+        border-radius: 5px;
+        border: 1px solid #AFAFAF;
+        margin-bottom: $rem-32;
+    }
+    &__btn-ctn {
+        @include flex(row, space-between, "");
+        width: 100%;
+    }
+    &__form-btn {
+        @include sizing(100px, 50px);
+        background-color: #000000;
+        color: #ffffff;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        letter-spacing: .1rem;
+    }
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparentize($color: #F4F4F4, $amount: 0.5);
+    z-index: 3;
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}

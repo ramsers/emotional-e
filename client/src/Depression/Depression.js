@@ -37,23 +37,23 @@ const Depression = () => {
                                     <img src={resource.image} alt="" className="depression__img"/>
                                 </div>
                                 <div className="depression__card-content-ctn">
-                                {(() =>{
-                                    if(resource.type === "Article") {
-                                        return (
-                                            <div className="depression__type-ctn">
-                                                <img src={articleIcon} alt="" className="depression__type-icon"/>
-                                                <p className="depression__type">{resource.type}</p>
-                                            </div>
-                                        )
-                                    } else{
-                                        return (
-                                            <div className="depression__type-ctn">
-                                                <img src={videoIcon} alt="" className="depression__type-icon"/>
-                                                <p className="depression__type">{resource.type}</p>
-                                            </div>
-                                        )
-                                    }
-                                }) ()}
+                                    {(() =>{
+                                        if(resource.type === "Article") {
+                                            return (
+                                                <div className="depression__type-ctn">
+                                                    <img src={articleIcon} alt="" className="depression__type-icon"/>
+                                                    <p className="depression__type">{resource.type}</p>
+                                                </div>
+                                            )
+                                        } else{
+                                            return (
+                                                <div className="depression__type-ctn">
+                                                    <img src={videoIcon} alt="" className="depression__type-icon"/>
+                                                    <p className="depression__type">{resource.type}</p>
+                                                </div>
+                                            )
+                                        }
+                                    }) ()}
                                     <h4 className="depression__card-title">{resource.title}</h4>
                                     <p className="depression__card-desc">{resource.description}</p>
                                     <a href={resource.link} className="depression__resource-link">Link to the {resource.type}</a>

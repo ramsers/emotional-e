@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './Anxiety.scss';
+import NotesModal from '../NotesModal/NotesModal';
 import axios from 'axios';
 import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
@@ -60,7 +61,9 @@ const Anxiety = () => {
                             </div>
                         )
                     })}
+                    <NotesModal/>
              </div>
+             
          </section>
      )
 }
