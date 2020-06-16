@@ -2,21 +2,24 @@
 	{
 	"id": "ANX01",
 	"title": "Breath Work",
-	"image": "",
+	"type": "Article",
+	"image": "https://i.imgur.com/Eksplrv.png",
 	"description": "When we get anxious our breath becomes rapid an shallow. This is the bodies natural response to any real or perceived threat. Useful when you're under physical attack but not in a work or school environment. As your breath becomes rapid so do your thoughts, anxitey will inhibit your ability to think clearly and have a massive impact on your ability to deal with your workload in an effecient manner. This article will provide breathing exercises that you cna use anytime anxiety hits you.",
 	"link": "https://www.verywellmind.com/abdominal-breathing-2584115"
 	},
 	{
 	"id": "ANX02",
 	"title": "Meditation",
-	"image": "",
+	"type": "Video",
+	"image": "https://i.imgur.com/3V0ubex.png",
 	"description": "Sometimes, you need time and space to reset your perspective. Meditation allows you to slow down your anxious brainwaves (Beta Waves), and allow you to approach whatever is bothering you with a fresh perspective. Use this 10 minute guided meditation during your lunch break or any time to quickly slow down your anxious thoughts and give you a fresh perspective.",
 	"link": "https://www.youtube.com/watch?v=O-6f5wQXSu8&t=35s"
 	},
 	{
 	"id": "ANX03",
 	"title": "Exercise",
-	"image": "",
+	"type": "Video",
+	"image": "https://i.imgur.com/kiKcoAt.png",
 	"description": "The mood boosting effects of exercise have been known for a while, the release of Endorphins has been shown to boost your mood. Did you also know that exercise has been well documented to decrease cortisol, the hormone that causes stress. Follow all or part of this 10 minute routine during lunch or any free time to help alleviate some stress",
 	"link": "https://www.youtube.com/watch?v=I_AxR-aHKaQ"
 	}
