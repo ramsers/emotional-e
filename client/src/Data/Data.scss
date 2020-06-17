@@ -1,0 +1,16 @@
+@import '../partials/partials.scss';
+
+.chart {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &__title {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    &__ctn{
+        height:80%;
+        width: 80%;
+    }
+}
