@@ -6,6 +6,7 @@ import EmotionData from './Data/Data';
 import Anxiety from './Anxiety/Anxiety';
 import Anger from './Anger/Anger';
 import Depression from './Depression/Depression';
+import Journal from './Journal/Journal';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Route path='/anxiety' component={Anxiety}/>
             <Route path='/anger' component={Anger}/>
             <Route path='/depression' component={Depression}/>
-            
+            <Route path='/journal' component={Journal}/>
         </Switch>
       </BrowserRouter>
     </div>
