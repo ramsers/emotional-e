@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import './Journal.scss';
+import cardTop from './JournalAssets/notesTop.png';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/journal';
@@ -11,11 +13,9 @@ let Journal = () => {
 
        axios.get(`${API_URL}`, {cancelToken: source.token})
         .then(res=> {
-            // console.log(res.data)
-            // console.log(res.data.length)
             setJournal(res.data)
         })
-        
+
         return() => {
             source.cancel();
         }
@@ -29,16 +29,22 @@ let Journal = () => {
         )
     } 
         return (
-            <div>
+            <section className="journal">
+                <div className="journal__ctn">
                 {
-                journal.map(entry => {
-                    return(
-                    <div>{entry.title}</div>
-                    
-                    )
-                })
+                    journal.map(entry => {
+                        return(
+                                <div key={entry.id} className="journal__card">
+                                    <div  className="journal__content-ctn">
+                                        <div>{entry.title}</div>
+                                        <div>{entry.notes}</div>
+                                    </div>
+                                </div>
+                        )
+                    })
                 }
-            </div>
+                </div>
+            </section>
         )
 }
 

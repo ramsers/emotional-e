@@ -1,0 +1,25 @@
+@import '../partials/partials.scss';
+
+.journal {
+    height: 100vh;
+    &__ctn {
+        @include flex(row, center, "");
+        flex-wrap: wrap;
+    }
+    &__card {
+        @include flex(column, center, center);
+        width:90%;
+        height: 300px;
+        border-radius: 15px;
+        background-image: url('./JournalAssets/notesTop.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: $rem-24;
+    }
+    &__content-ctn {
+        @include sizing(85%, 85%);
+        border-radius: 15px;
+        background-color: #ffffff;
+    }
+}

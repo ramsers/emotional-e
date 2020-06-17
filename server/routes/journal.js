@@ -16,6 +16,16 @@ router.get('/', (req, res)=> {
     res.json(notesData)
 })
 
+
+let currDate = () => {
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    return `${day}/${month}/${year}`
+}
+
 router.post('/', (req, res)=> {
 
     if(!req.body.title || !req.body.notes) {
@@ -26,6 +36,7 @@ router.post('/', (req, res)=> {
             ...notesData,
             {   
                 id: uuidv4(),
+                date: currDate(),
                 ...req.body
             }
         ]
