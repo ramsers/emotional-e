@@ -30,6 +30,17 @@
         &:focus {
             outline: none;
         } 
+        @include tablet{
+            width: 46%;
+            left: 28%;
+            &:focus {
+                outline: none;
+            } 
+        }
+        @include desktop {
+            width:35%;
+            left:34%;
+        }
     }
     &__ctn {
         @include flex(column, "", center);
@@ -76,6 +87,7 @@
         font-family: 'Quicksand', sans-serif;
         font-weight: 600;
         letter-spacing: .1rem;
+        border-radius: 4px;
     }
 }
 
