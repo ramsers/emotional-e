@@ -7,7 +7,7 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/journal';
 
 let NotesModal =()=> {
-    const [modalIsOpen, setModalIsOpen] = useState(true)
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     const [note, setNotes] = useState([])
 
 

@@ -1,16 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './Data.scss';
-import { defaults} from 'react-chartjs-2';
 import {Pie} from 'react-chartjs-2';
 import axios from 'axios';
-// defaults.global.animation = 10000
 
 const API_URL = 'http://localhost:8080/clicks';
 
 
 const EmotionData = () => {
     const [chartData, setChartData] = useState({});
-    const [clicks, setClicks] = useState({});
 
     const chart = () => {
         axios.get(`${API_URL}`)
@@ -49,9 +46,9 @@ const EmotionData = () => {
                     <Pie className="chart__pie"
                      data={chartData} options={{
                     responsive:true,
-                    animation: {duration: 4000},
+                    animation: {duration: 3500},
                     maintainAspectRatio: false ,
-                    cutoutPercentage: 20,
+                    cutoutPercentage: 30,
                     rotation: 120
                     }}/>
                     </div>

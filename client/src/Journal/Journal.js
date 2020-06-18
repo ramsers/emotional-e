@@ -36,8 +36,9 @@ let Journal = () => {
                         return(
                                 <div key={entry.id} className="journal__card">
                                     <div  className="journal__content-ctn">
-                                        <div>{entry.title}</div>
-                                        <div>{entry.notes}</div>
+                                        <h3 className="journal__date">{entry.date}</h3>
+                                        <h3 className="journal__title">{entry.title}</h3>
+                                        <p  className="journal__entry">{entry.notes}</p>
                                     </div>
                                 </div>
                         )

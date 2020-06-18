@@ -1,10 +1,24 @@
 @import '../partials/partials.scss';
 
 .journal {
-    height: 100vh;
+    height: 100%;
     &__ctn {
         @include flex(row, center, "");
         flex-wrap: wrap;
+        @include desktop-small {
+            height:100%;
+            justify-content: space-around;
+            padding-left: $rem-24;
+            padding-right: $rem-24;
+            padding-top: $rem-32;
+        }
+        @include desktop{
+            height:100%;
+            justify-content: space-around;
+            padding-left: $rem-24;
+            padding-right: $rem-24;
+            padding-top: $rem-32;
+        }
     }
     &__card {
         @include flex(column, center, center);
@@ -16,10 +30,35 @@
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: $rem-24;
+        @include tablet {
+            width: 51%;
+        }
+        @include desktop-small{
+            width: 30%;
+        }
+        @include desktop{
+            width: 30%;
+        }
     }
     &__content-ctn {
         @include sizing(85%, 85%);
         border-radius: 15px;
         background-color: #ffffff;
+        padding: $rem-16;
+    }
+    &__date {
+        color: #0095FF;
+        margin-bottom: $rem-16;
+    }
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .01rem;
+        text-decoration: underline;
+        margin-bottom: $rem-16;
+    }
+    &__entry {
+        font-family: 'Quicksand', sans-serif;
+        line-height: $rem-20;
     }
 }
