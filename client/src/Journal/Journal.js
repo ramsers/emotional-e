@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './Journal.scss';
-import cardTop from './JournalAssets/notesTop.png';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/journal';

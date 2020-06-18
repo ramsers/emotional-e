@@ -59,13 +59,13 @@
             @include desktop-small {
                 @include flex(column, center, center);
                 position: absolute;
-                left: 50%;
+                left: 46%;
                 bottom: 3%;
             }
             @include desktop{
                 @include flex(column, center, center);
                 position: absolute;
-                left: 50%;
+                left: 46%;
                 bottom: 3%;
             }
         }

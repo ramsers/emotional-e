@@ -32,7 +32,7 @@ let tl = new TimelineMax({repeat: 2, delay: 2});
         .to(arrow, .75, {y:-20, ease:Power3.easeOut, yoyo:true, repeat:1,})
         TweenMax.to(
             arrowText,
-            2,
+            1,
             {
                 opacity:1,
                 y:-15,

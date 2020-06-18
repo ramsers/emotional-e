@@ -2,8 +2,9 @@
 
 .emotions {
     height: 100%;
-    @include flex(row, center, "");
+    @include flex(column, "", center);
     &__wrap {
+        
         @include sizing(100%, 100%);
         @include flex(row, center, "");
         flex-wrap: wrap;
@@ -13,13 +14,23 @@
         }
         @include desktop-small {
             @include flex(row, space-around, "");
+            padding: $rem-32 $rem-48 $rem-32 $rem-48;
         }
         @include desktop {
             @include flex(row, space-around, "");
-            padding: 0 $rem-48 0 $rem-48;
+            padding: $rem-32 $rem-48 $rem-32 $rem-48;
         }
     }
+    &__head {
+        transform: translateX(-100%);
+        opacity: 0;
+        font-size: $rem-24;
+        font-weight: 700;
+        margin-bottom: $rem-24;
+    }
     &__card-link {
+        opacity: 0;
+        transform: translateY(70%);
         @include sizing(60%, 70vw);
         @include flex(row, center, center);
         background-color: #ffffff;
