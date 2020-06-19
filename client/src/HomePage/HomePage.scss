@@ -68,7 +68,13 @@
             &:nth-of-type(1):hover>.emotions__card-desc{
                 display: flex;
                 position: absolute;
-                text-align: center;
+                text-align: justify;
+                word-spacing: -1px;
+                font-size: $rem-12;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 600;
+                line-height: $rem-16;
+                width:80%;
             }
         }
         @include desktop {
@@ -86,7 +92,7 @@
                 display: flex;
                 position: absolute;
                 text-align: justify;
-                text-justify: inter-word;
+                word-spacing: -2px;
                 font-size: $rem-16;
                 font-family: 'Quicksand', sans-serif;
                 font-weight: 600;
@@ -119,7 +125,13 @@
             &:nth-of-type(2):hover>.emotions__card-desc{
                 display: flex;
                 position: absolute;
-                text-align: center;
+                text-align: justify;
+                // word-spacing: -3px;
+                font-size: $rem-12;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 600;
+                line-height: $rem-16;
+                width:80%;
             }
         }
         @include desktop {
@@ -137,7 +149,7 @@
                 display: flex;
                 position: absolute;
                 text-align: justify;
-                text-justify: inter-word;
+                word-spacing: -2px;
                 font-size: $rem-16;
                 font-family: 'Quicksand', sans-serif;
                 font-weight: 600;
@@ -154,19 +166,25 @@
         transition: all .3s ease-in-out;
         transition-property: box-shadow, display;
         @include desktop-small {
-            &:nth-of-type(1):hover {
+            &:nth-of-type(3):hover {
                 background-color: #F2DAFE;
                 background-image: none !important;
                 -moz-box-shadow: 10px 21px 48px -15px rgba(0,0,0,0.75);
                 box-shadow: 10px 21px 48px -15px rgba(0,0,0,0.75);
             }
-            &:nth-of-type(1):hover>.emotions__card-title-ctn{
+            &:nth-of-type(3):hover>.emotions__card-title-ctn{
                 display: none;
             }
-            &:nth-of-type(1):hover>.emotions__card-desc{
+            &:nth-of-type(3):hover>.emotions__card-desc{
                 display: flex;
                 position: absolute;
-                text-align: center;
+                text-align: justify;
+                word-spacing: -2px;
+                font-size: $rem-12;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 600;
+                line-height: $rem-16;
+                width:80%;
             }
         }
         @include desktop {
@@ -185,6 +203,8 @@
                 position: absolute;
                 text-align: justify;
                 text-justify: inter-word;
+                text-align-last: left;
+                word-spacing: -2px;
                 font-size: $rem-16;
                 font-family: 'Quicksand', sans-serif;
                 font-weight: 600;

@@ -101,50 +101,51 @@ useEffect(() => {
                 <div  className="emotions__wrap">
 
                     <Link  className="emotions__card-link emotions--anxiety" ref={el => {emotionsCard = el}} onClick={anxietyClick} to='/anxiety'>
-                            <p className="emotions__card-desc">Everyone feels anxious now and then. It’s a normal emotion. 
-                            For example, you may feel nervous when faced with a problem at work, 
-                            before taking a test, or before making an important decision. Anxiety disorders a little different. 
-                            They are a group of mental illnesses, and the distress they cause can 
-                            keep you from carrying on with your life normally. For people who have one, worry and fear are constant and overwhelming, and this can be disabling. 
-                            But with treatment, many people can manage those feelings and get back to a fulfilling life.
+                            <p className="emotions__card-desc">
+                                Everyone feels anxious now and then. It’s a normal emotion. 
+                                For example, you may feel nervous when faced with a problem at work, before taking a test, 
+                                or before making an important decision. Anxiety disorders a little different. 
+                                They are a group of mental illnesses, and the distress they cause can keep you from carrying on with your life normally. 
+                                For people who have one, worry and fear are constant and overwhelming, and this can be disabling. 
+                                But with treatment, many people can manage those feelings and get back to a fulfilling life.
+                                Click this card for more resources.
                             </p>
 
                         <div  className="emotions__card"></div>
                         <div className="emotions__card-title-ctn">
-                                <h2 className="emotions__card-title">Anxiety</h2>
+                                <h2 className="emotions__card-title">Anxious</h2>
                         </div>
                     </Link>
                     
                     
                     <Link className="emotions__card-link emotions--anger" ref={el => {emotionsCard2 = el}} onClick={angerClick} to='/anger'>
-                    <p className="emotions__card-desc">Everyone feels anxious now and then. It’s a normal emotion. 
-                            For example, you may feel nervous when faced with a problem at work, 
-                            before taking a test, or before making an important decision. Anxiety disorders a little different. 
-                            They are a group of mental illnesses, and the distress they cause can 
-                            keep you from carrying on with your life normally. For people who have one, worry and fear are constant and overwhelming, and this can be disabling. 
-                            But with treatment, many people can manage those feelings and get back to a fulfilling life.
-                            </p>
+                        <p className="emotions__card-desc">
+                            Anger is an emotion characterized by antagonism toward someone or something you feel has deliberately done you wrong. Anger can be a good thing. 
+                            It can give you a way to express negative feelings, for example, or motivate you to find solutions to problems. 
+                            But excessive anger can cause problems. Increased blood pressure and other physical changes associated with anger make it difficult to think straight and harm your physical and mental health.
+                            Click this card for more resources.
+                        </p>
 
                         <div className="emotions__card"></div>
                         <div className="emotions__card-title-ctn">
-                                <h2 className="emotions__card-title">Anger</h2>
+                                <h2 className="emotions__card-title">Angry</h2>
                         </div>
                     </Link>
                     
                    
                    <Link className="emotions__card-link emotions--depression" ref={el => {emotionsCard3 = el}} onClick={depressionClick} to='/depression'>
                         
-                   <p className="emotions__card-desc">Everyone feels anxious now and then. It’s a normal emotion. 
-                            For example, you may feel nervous when faced with a problem at work, 
-                            before taking a test, or before making an important decision. Anxiety disorders a little different. 
-                            They are a group of mental illnesses, and the distress they cause can 
-                            keep you from carrying on with your life normally. For people who have one, worry and fear are constant and overwhelming, and this can be disabling. 
-                            But with treatment, many people can manage those feelings and get back to a fulfilling life.
-                            </p>
+                        <p className="emotions__card-desc">
+                            Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. 
+                            It affects how you feel, think and behave and can lead to a variety of emotional and physical problems. 
+                            You may have trouble doing normal activities, and sometimes you may feel as if life isn't worth living. 
+                            More than just a bout of the blues, depression isn't a weakness and you can't simply "snap out" of it. Click this card for more resources.
+                        </p>
+                        
 
                         <div className="emotions__card"></div>
                         <div className="emotions__card-title-ctn">
-                                <h2 className="emotions__card-title">Depression</h2>
+                                <h2 className="emotions__card-title">Depressed</h2>
                         </div>
                     </Link>
                 </div>
