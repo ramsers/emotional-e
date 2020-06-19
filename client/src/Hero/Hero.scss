@@ -13,7 +13,7 @@
         margin-top: 0;
     }
     @include desktop {
-        height: 40vw;
+        height: 42vw;
     }
     &__wrap {
         @include flex(row, flex-start, center);
