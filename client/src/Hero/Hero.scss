@@ -27,28 +27,58 @@
                 padding: 0 $rem-48 0 $rem-48;
             }
         }
+
+    &__text-ctn {
+        transform: translatex(-100px);
+        width: 96%;
+        opacity: 0;
+        @include desktop-small {
+            @include flex(column, "", "");
+            width: 100%;
+        }
+        @include desktop {
+            width: 84%;
+        }
+    }    
     &__header {
-        font-size: $rem-32;
+        font-size: 1.8rem;
         font-weight: 900;
         width:85%;
-        transform: translatex(-100px);
         line-height: 2.5rem;
         letter-spacing: .1rem;
-        opacity: 0;
+        
             @include tablet {
                 font-size: $rem-48;
-                line-height: 3.5rem;
+                line-height: $rem-48;
                 width: 62%;
             }
             @include desktop-small {
                 font-size: $rem-64;
-                line-height: 5.5rem;
+                line-height: $rem-56;
                 width: 50%;
             }
             @include desktop {
-                font-size: $rem-64;
-                line-height: 5.5rem;
+                font-size: $rem-68;
+                line-height: $rem-64;
                 width: 50%;
+            }
+        }
+        &__desc {
+            padding-top: $rem-16;
+            font-size: $rem-14;
+            width: 56%;
+            line-height: 1.3rem;
+            @include tablet {
+                padding: $rem-24 0 0 .2rem;
+            }
+            @include desktop-small{
+                width: 76%;
+                padding: $rem-32 0 0 .2rem;
+                font-size: $rem-16;
+            }
+            @include desktop {
+                padding: $rem-32 0 0 .2rem;
+                font-size: $rem-18;
             }
         }
         &__scroll-ctn {

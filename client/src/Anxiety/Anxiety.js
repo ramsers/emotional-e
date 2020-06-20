@@ -1,16 +1,39 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import './Anxiety.scss';
 import NotesModal from '../NotesModal/NotesModal';
 import axios from 'axios';
 import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
+import {TweenMax, Power3} from 'gsap';
 
 const API_URL = 'http://localhost:8080/anxiety';
 
 const Anxiety = () => {
      const [anxResources, setAnxResources] = useState([]);
+     let anxHeader = useRef(null);
+     let anxContent = useRef(null);
     
      useEffect(()=> {
+
+        TweenMax.to(
+            anxHeader,
+            2,
+            {
+                opacity: 1,
+                x: 0,
+                ease: Power3.easeOut
+            }
+        )
+        TweenMax.to(
+            anxContent,
+            1.5,
+            {
+                opacity: 1,
+                y: -20,
+                ease: Power3.easeIn
+            }
+        )
+
         let source = axios.CancelToken.source();
 
         axios.get(`${API_URL}`, {cancelToken: source.token})
@@ -23,13 +46,17 @@ const Anxiety = () => {
         return() => {
             source.cancel();
         }
-     },);
+
+     }, []);
      
 
 
      return(
          <section className="anxiety">
-             <div className="anxiety__wrap">
+             <div ref={el => {anxHeader = el}} className="anxiety__header-ctn">
+                <h2 className="anxiety__header">Welcome to Your Anxiety Resources</h2>
+             </div>
+             <div ref={el => {anxContent = el}} className="anxiety__wrap">
                     {anxResources.map(resource => {
                         return(
                             <div key={resource.id} className="anxiety__card">
@@ -56,7 +83,7 @@ const Anxiety = () => {
                                 }) ()}
                                     <h4 className="anxiety__card-title">{resource.title}</h4>
                                     <p className="anxiety__card-desc">{resource.description}</p>
-                                    <a href={resource.link} className="anxiety__resource-link">Link to the {resource.type}</a>
+                                    <a href={resource.link} target='_blank' rel="noopener noreferrer" className="anxiety__resource-link">Link to the {resource.type}</a>
                                 </div>
                             </div>
                         )

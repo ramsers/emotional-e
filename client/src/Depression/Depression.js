@@ -1,15 +1,40 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import './Depression.scss';
 import axios from 'axios';
 import articleIcon from './DepressionAssets/article-type-icon.svg';
 import videoIcon from './DepressionAssets/video-type-icon.svg';
+import NotesModal from '../NotesModal/NotesModal';
+import {TweenMax, Power3} from 'gsap';
 
 const API_URL = 'http://localhost:8080/depression';
 
 const Depression = () => {
      const [depResources, setDepResources] = useState([]);
+     let depHeader = useRef(null);
+     let depContent = useRef(null);
     
      useEffect(()=> {
+
+
+        TweenMax.to(
+            depHeader,
+            2,
+            {
+                opacity: 1,
+                x: 0,
+                ease: Power3.easeOut
+            }
+        )
+        TweenMax.to(
+            depContent,
+            1.5,
+            {
+                opacity: 1,
+                y: -20,
+                ease: Power3.easeIn
+            }
+        )
+
         let source = axios.CancelToken.source();
 
         axios.get(`${API_URL}`, {cancelToken: source.token})
@@ -23,13 +48,16 @@ const Depression = () => {
         return() => {
             source.cancel();
         }
-     },);
+     }, []);
      
 
 
      return(
          <section className="depression">
-             <div className="depression__wrap">
+              <div ref={el => {depHeader = el}} className="depression__header-ctn">
+                <h2 className="anxiety__header">Welcome to Your Depression Resources</h2>
+             </div>
+             <div ref={el=> {depContent = el}} className="depression__wrap">
                     {depResources.map(resource => {
                         return(
                             <div key={resource.id} className="depression__card">
@@ -56,11 +84,12 @@ const Depression = () => {
                                     }) ()}
                                     <h4 className="depression__card-title">{resource.title}</h4>
                                     <p className="depression__card-desc">{resource.description}</p>
-                                    <a href={resource.link} className="depression__resource-link">Link to the {resource.type}</a>
+                                    <a href={resource.link} target='_blank' rel="noopener noreferrer" className="depression__resource-link">Link to the {resource.type}</a>
                                 </div>
                             </div>
                         )
                     })}
+                    <NotesModal/>
              </div>
          </section>
      )

@@ -1,15 +1,40 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import './Anger.scss';
 import axios from 'axios';
 import articleIcon from './AngerAssets/article-type-icon.svg';
 import videoIcon from './AngerAssets/video-type-icon.svg';
+import NotesModal from '../NotesModal/NotesModal';
+import {TweenMax, Power3} from 'gsap';
 
 const API_URL = 'http://localhost:8080/anger';
 
 const Anger = () => {
      const [angResources, setAngResources] = useState([]);
+     let angHeader = useRef(null);
+     let angContent = useRef(null);
+
     
      useEffect(()=> {
+
+        TweenMax.to(
+            angHeader,
+            2,
+            {
+                opacity: 1,
+                x: 0,
+                ease: Power3.easeOut
+            }
+        )
+        TweenMax.to(
+            angContent,
+            1.5,
+            {
+                opacity: 1,
+                y: -20,
+                ease: Power3.easeIn
+            }
+        )
+
         let source = axios.CancelToken.source();
 
         axios.get(`${API_URL}`, {cancelToken: source.token})
@@ -22,13 +47,16 @@ const Anger = () => {
         return() => {
             source.cancel();
         }
-     },);
+     }, []);
      
 
 
      return(
          <section className="anger">
-             <div className="anger__wrap">
+             <div ref={el => {angHeader = el}} className="anger__header-ctn">
+                <h2 className="anger__header">Welcome to Your Anger Resources</h2>
+             </div>
+             <div ref={el => {angContent = el}} className="anger__wrap">
                     {angResources.map(resource => {
                         return(
                             <div key={resource.id} className="anger__card">
@@ -55,11 +83,12 @@ const Anger = () => {
                                 }) ()}
                                     <h4 className="anger__card-title">{resource.title}</h4>
                                     <p className="anger__card-desc">{resource.description}</p>
-                                    <a href={resource.link} className="anger__resource-link">Link to the {resource.type}</a>
+                                    <a href={resource.link} target='_blank' rel="noopener noreferrer" className="anger__resource-link">Link to the {resource.type}</a>
                                 </div>
                             </div>
                         )
                     })}
+                    <NotesModal/>
              </div>
          </section>
      )

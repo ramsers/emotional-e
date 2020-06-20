@@ -7,22 +7,41 @@
     position: relative;
     @include tablet {
         height: 100%;
+        padding: 0 $rem-24 0 $rem-24;
     }
     @include desktop {
         height:100%;
         padding: 0 $rem-48 0 $rem-48;
     }
     &__wrap {
-        @include sizing(100%, 100%);
+        transform: translateY(100%);
+        opacity: 0;
+        @include sizing(100%, 100vw);
         @include flex(row, center, "");
         flex-wrap: wrap;
         @include desktop-small {
             height:100%;
+            width: 102%;
             justify-content: space-between;
         }
         @include desktop {
             height:100%;
+            width:103%;
             justify-content: space-between;
+        }
+    }
+    &__header-ctn {
+        transform: translateX(-100%);
+        opacity: 0;
+        @include flex(row, center, center);
+        @include sizing(100%, 8vw);
+        margin-bottom: $rem-24;
+    }
+    &__header {
+        font-size: $rem-18;
+        font-weight: 600;
+        @include tablet {
+            font-size: $rem-24;
         }
     }
     &__card {
@@ -31,6 +50,7 @@
         width: 90%;
         max-height: 175vw;
         position: relative;
+        border-radius: 22px;
         @include mobile-only {
             height: 560px;
         }
@@ -54,6 +74,8 @@
     }
     &__img {
         width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
     &__type-ctn {
         @include flex(row, space-between, center);

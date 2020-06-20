@@ -57,8 +57,14 @@
             transition: width .3s ease-in-out;
         }
         @include tablet {
-            font-size: $rem-20;
+            font-size: .8rem;
             margin-left: 3rem;
+        }
+        @include desktop-small {
+            font-size: $rem-20;
+        }
+        @include desktop {
+            font-size: $rem-20;
         }
     }
 }

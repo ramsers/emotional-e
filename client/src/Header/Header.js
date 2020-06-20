@@ -14,10 +14,10 @@ const Header =() => {
 
                 <nav className="header__nav">
                     <NavLink to="/journal" className="header__nav-link">
-                        Notes
+                        Your Notes
                     </NavLink>
                     <NavLink to="/data" className="header__nav-link">
-                        Data
+                        Your Data
                     </NavLink>
                 </nav>
             </div>

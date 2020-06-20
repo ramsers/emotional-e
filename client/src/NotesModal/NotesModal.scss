@@ -10,11 +10,14 @@
         border-radius: 50%;
         position: fixed;
         right: 30px;
-        top: 295px;
+        top: 280px;
         background-color: #0095FF;
         &:focus {
             outline: none;
         }
+        // @include desktop{
+        //     right:100px;
+        // }
     }
     &__window {
         @include sizing(90%, 400px);

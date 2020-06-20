@@ -49,13 +49,16 @@ let tl = new TimelineMax({repeat: 2, delay: 2});
                 delay: 2
             }
         )
-    }, [])
+    },[])
     
 
     return (
         <section className="hero">
             <div className="hero__wrap">
-                <h1 ref={el => {heroText = el}} className="hero__header">It's Time to Find Your Peace</h1>
+                <div ref={el => {heroText = el}} className="hero__text-ctn">
+                <h1 className="hero__header">It's Time to Find Your Peace</h1>
+                <p className="hero__desc">Find Helpful Resources, Track Your Emotional Data</p>
+                </div>
                 <div className="hero__scroll-ctn">
                     <p ref={el=> {arrowText = el}} className="hero__scroll-text">Scroll Down</p>
                     <img className="hero__arrow" ref={el=> {arrow = el}} src={downArrow} alt=""/>
