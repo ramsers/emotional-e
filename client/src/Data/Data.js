@@ -42,7 +42,7 @@ const EmotionData = () => {
             <section className="chart">
                 
                 <div className="chart__ctn">
-                <h2 className="chart__title">Day Spent in Emotional State</h2>
+                <h2 className="chart__title">Days Spent in Emotional State</h2>
                     <Pie className="chart__pie"
                      data={chartData} options={{
                     responsive:true,

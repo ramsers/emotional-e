@@ -24,7 +24,11 @@ let Journal = () => {
 
     if(!journal || journal.length <= 0) {
         return(
-            <div>Loadiing</div>
+            <div className="loading">
+                <h2 className="loading__text">Sorry You Havent Added Any Notes Yet.
+                    Have You Been to One of Our Resource Pages? Click A Card on the HomePage.
+                </h2>
+            </div>
         )
     } 
         return (

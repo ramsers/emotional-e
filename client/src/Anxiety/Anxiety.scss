@@ -16,7 +16,7 @@
     &__wrap {
         transform: translateY(100%);
         opacity: 0;
-        @include sizing(100%, 100vw);
+        @include sizing(100%, 100%);
         @include flex(row, center, "");
         flex-wrap: wrap;
         @include desktop-small {
@@ -56,7 +56,7 @@
         }
         @include tablet {
             width:51%;
-            height:540px;
+            height:560px;
         }
         @include desktop-small {
             width:30%;
@@ -74,8 +74,8 @@
     }
     &__img {
         width: 100%;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
     }
     &__type-ctn {
         @include flex(row, space-between, center);

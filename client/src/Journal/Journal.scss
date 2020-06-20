@@ -62,3 +62,29 @@
         line-height: $rem-20;
     }
 }
+
+.loading {
+    height: 100vh;
+    @include flex(column, flex-start, center);
+    padding: $rem-48 $rem-16 0 $rem-16;
+    @include tablet {
+        padding: $rem-48 $rem-24 0 $rem-24;     
+    }
+    &__text {
+        text-align: center;
+        line-height: $rem-24;
+        @include tablet {
+            line-height: $rem-32;
+            width: 80%;
+            font-size: $rem-24;
+        }
+        @include desktop-small {
+            font-size: $rem-32;
+            line-height: $rem-48;
+        }
+        @include desktop{
+            font-size: $rem-32;
+            line-height: $rem-48;
+        }
+    }
+}

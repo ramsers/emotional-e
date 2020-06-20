@@ -23,9 +23,11 @@ let NotesModal =()=> {
         })
     }
 
+
         return (
             <div className="modal">
                 <button className="modal__button" onClick={()=> {setModalIsOpen(true)}}>
+                <div className="modal__text">Add A Note</div>
                 <img src={noteAdd} alt=""/>
                 </button>
                 <ReactModal
@@ -39,7 +41,7 @@ let NotesModal =()=> {
                             <label className="modal__label" htmlFor="Title">Title Your Note</label>
                             <input className="modal__title-input" type="text" id="title"/>
                             <label className="modal__label" htmlFor="notes">Input Your Thoughts</label>
-                            <input className="modal__notes-input" type="text" id="journal"/>
+                            <textarea className="modal__notes-input" type="text" id="journal"/>
                             <div className="modal__btn-ctn">
                                 <button className="modal__form-btn" type="submit">Post Note</button>
                                 <button className="modal__form-btn" onClick={()=>{setModalIsOpen(false)}}>

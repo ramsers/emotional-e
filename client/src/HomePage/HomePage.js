@@ -98,7 +98,7 @@ useEffect(() => {
             <Hero/>
             <section ref={el => {emotionsCardSection = el}} className="emotions">
                 <h2 ref={el => {emotionHead = el}} className="emotions__head">How're You Feeling Today?</h2>
-                <div  className="emotions__wrap">
+                <div className="emotions__wrap">
 
                     <Link  className="emotions__card-link emotions--anxiety" ref={el => {emotionsCard = el}} onClick={anxietyClick} to='/anxiety'>
                             <p className="emotions__card-desc">

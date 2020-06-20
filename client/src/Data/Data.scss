@@ -8,6 +8,15 @@
     &__title {
         text-align: center;
         margin-bottom: 5px;
+        @include tablet {
+            font-size: $rem-20;
+        }
+        @include desktop-small {
+            font-size: $rem-24;
+        }
+        @include desktop{
+            font-size: $rem-32;
+        }
     }
     &__ctn{
         height:80%;
