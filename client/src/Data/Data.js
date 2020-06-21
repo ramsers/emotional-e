@@ -18,7 +18,7 @@ const EmotionData = () => {
             let depressionData = res.data.depressionClicks
             
             setChartData({
-                labels: ['Anxiety', 'Anger', 'Depression'],
+                labels: ['Anxious', 'Angry', 'Depressed'],
                 datasets: [
                     {
                         // Pass Clicks data down as chart data
