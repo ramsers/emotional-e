@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Journal.scss';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/journal';
 
 let Journal = () => {
-    const [journal, setJournal] = useState([])
+    let [journal, setJournal] = useState([]);
+    let notesCtn = useRef(null)
 
     useEffect(()=> {
+
         let source = axios.CancelToken.source();
 
        axios.get(`${API_URL}`, {cancelToken: source.token})
@@ -18,13 +20,11 @@ let Journal = () => {
         return() => {
             source.cancel();
         }
-        
     }, [])
-
 
     if(!journal || journal.length <= 0) {
         return(
-            <div className="loading">
+            <div  className="loading">
                 <h2 className="loading__text">Sorry You Havent Added Any Notes Yet.
                     Have You Been to One of Our Resource Pages? Click A Card on the HomePage.
                 </h2>
@@ -38,18 +38,19 @@ let Journal = () => {
                     journal.map(entry => {
                         return(
                                 <div key={entry.id} className="journal__card">
-                                    <div  className="journal__content-ctn">
+                                    <div className="journal__content-ctn">
                                         <h3 className="journal__date">{entry.date}</h3>
                                         <h3 className="journal__title">{entry.title}</h3>
                                         <p  className="journal__entry">{entry.notes}</p>
                                     </div>
+                                    
                                 </div>
                         )
                     })
                 }
                 </div>
             </section>
-        )
+        )     
 }
 
 export default Journal;

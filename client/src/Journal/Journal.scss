@@ -30,6 +30,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: $rem-24;
+        
         @include tablet {
             width: 51%;
         }
@@ -45,6 +46,12 @@
         border-radius: 15px;
         background-color: #ffffff;
         padding: $rem-16;
+        max-height: 700px;
+        overflow-y: scroll;
+        position: relative;
+        &::-webkit-scrollbar {
+            display: none;
+          }  
     }
     &__date {
         color: #0095FF;
