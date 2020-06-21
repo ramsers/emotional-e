@@ -16,11 +16,16 @@ let NotesModal =()=> {
         let newNote = note.slice();
         let title = e.target.title.value;
         let notes = e.target.journal.value;
-        newNote.push({title, notes})
-        axios.post(`${API_URL}/journal`, {title:title, notes:notes})
-        .then(()=>{
-            setNotes(newNote)
-        })
+
+        if(!title || !notes) {
+            alert('Please Input A Title andc Note')
+        } else {
+            newNote.push({title, notes})
+            axios.post(`${API_URL}/journal`, {title:title, notes:notes})
+            .then(()=>{
+                setNotes(newNote)
+            })
+        }
     }
 
 
