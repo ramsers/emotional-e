@@ -1,8 +1,7 @@
 @import '../partials/partials.scss';
 
 .anxiety {
-    width: 100vw;
-    height: 100%;
+    @include sizing(100vw, 100%);
     padding: 0 $rem-16 0 $rem-16;
     position: relative;
     @include tablet {
@@ -19,14 +18,13 @@
         @include sizing(100%, 100%);
         @include flex(row, center, "");
         flex-wrap: wrap;
+        padding-top: $rem-16;
         @include desktop-small {
-            height:100%;
-            width: 102%;
+            @include sizing(102%, 100%);
             justify-content: space-between;
         }
         @include desktop {
-            height:100%;
-            width:103%;
+            @include sizing(103%, 100%);
             justify-content: space-between;
         }
     }
@@ -36,10 +34,12 @@
         @include flex(row, center, center);
         @include sizing(100%, 8vw);
         margin-bottom: $rem-24;
+       
     }
     &__header {
         font-size: $rem-18;
         font-weight: 600;
+        
         @include tablet {
             font-size: $rem-24;
         }
@@ -55,16 +55,13 @@
             height: 560px;
         }
         @include tablet {
-            width:51%;
-            height:560px;
+            @include sizing(51%, 560px);
         }
         @include desktop-small {
-            width:30%;
-            height:575px;
+            @include sizing(30%, 575px);
         }
         @include desktop {
-            width: 30%;
-            height: 585px;
+            @include sizing(30%, 585px);
         }
     }
     &__card-content-ctn {

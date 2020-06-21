@@ -7,6 +7,10 @@ const anxietyClickRoute = require ('./routes/clicks')
 const notesDataRoute = require('./routes/journal');
 const cors = require('cors');
 
+require('dotenv').config();
+
+const port = process.env.PORT || 3000
+
 
 app.use(cors());
 
@@ -26,7 +30,7 @@ app.use('/clicks', anxietyClickRoute)
 
 app.use('/journal', notesDataRoute)
 
-app.listen(8080, ()=> {
+app.listen(port, ()=> {
     console.log('server is running on 8080');
 })
 

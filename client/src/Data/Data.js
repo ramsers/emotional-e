@@ -3,14 +3,15 @@ import './Data.scss';
 import {Pie} from 'react-chartjs-2';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/clicks';
+const API_URL = process.env.REACT_APP_API_URL;
 
-
+// Chart Data
 const EmotionData = () => {
     const [chartData, setChartData] = useState({});
 
     const chart = () => {
-        axios.get(`${API_URL}`)
+        // Axios call to get and then store data in Variables
+        axios.get(`${API_URL}/clicks`)
         .then(res => {
             let anxietyData = res.data.anxietyClicks;
             let angerData = res.data.angerClicks;
@@ -20,6 +21,7 @@ const EmotionData = () => {
                 labels: ['Anxiety', 'Anger', 'Depression'],
                 datasets: [
                     {
+                        // Pass Clicks data down as chart data
                         data: [anxietyData, angerData, depressionData],
                         backgroundColor: ['#02efeb','#f1c3f7', '#fc2397' ]
                     }

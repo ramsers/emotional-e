@@ -6,7 +6,7 @@ import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = 'http://localhost:8080/anxiety';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Anxiety = () => {
      const [anxResources, setAnxResources] = useState([]);
@@ -36,7 +36,7 @@ const Anxiety = () => {
 
         let source = axios.CancelToken.source();
 
-        axios.get(`${API_URL}`, {cancelToken: source.token})
+        axios.get(`${API_URL}/anxiety`, {cancelToken: source.token})
         .then(res=> {
             setAnxResources(res.data);
         })
@@ -54,7 +54,7 @@ const Anxiety = () => {
      return(
          <section className="anxiety">
              <div ref={el => {anxHeader = el}} className="anxiety__header-ctn">
-                <h2 className="anxiety__header">Welcome to Your Anxiety Resources</h2>
+                <h2 className="anxiety__header">Your Anxiety Resources</h2>
              </div>
              <div ref={el => {anxContent = el}} className="anxiety__wrap">
                     {anxResources.map(resource => {

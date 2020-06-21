@@ -2,9 +2,7 @@
 
 .chart {
     height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex(row, center, "");
     &__title {
         text-align: center;
         margin-bottom: 5px;
@@ -19,7 +17,6 @@
         }
     }
     &__ctn{
-        height:80%;
-        width: 80%;
+        @include sizing(80%, 80%);
     }
 }

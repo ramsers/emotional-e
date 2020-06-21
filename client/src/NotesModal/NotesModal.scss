@@ -10,10 +10,13 @@
         border-radius: 50%;
         position: fixed;
         right: 30px;
-        top: 275px;
+        top: 185px;
         background-color: #0095FF;
         &:focus {
             outline: none;
+        }
+        @include tablet {
+            top:265px;
         }
         @include desktop-small {
             top: 220px;

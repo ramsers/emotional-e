@@ -6,7 +6,7 @@ import videoIcon from './AngerAssets/video-type-icon.svg';
 import NotesModal from '../NotesModal/NotesModal';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = 'http://localhost:8080/anger';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Anger = () => {
      const [angResources, setAngResources] = useState([]);
@@ -15,7 +15,7 @@ const Anger = () => {
 
     
      useEffect(()=> {
-
+        // GSAP Animations
         TweenMax.to(
             angHeader,
             2,
@@ -35,9 +35,10 @@ const Anger = () => {
             }
         )
 
+        // Axios Request and Axios Cancel Token
         let source = axios.CancelToken.source();
 
-        axios.get(`${API_URL}`, {cancelToken: source.token})
+        axios.get(`${API_URL}/anger`, {cancelToken: source.token})
         .then(res=> {
             setAngResources(res.data)
         })
@@ -54,7 +55,7 @@ const Anger = () => {
      return(
          <section className="anger">
              <div ref={el => {angHeader = el}} className="anger__header-ctn">
-                <h2 className="anger__header">Welcome to Your Anger Resources</h2>
+                <h2 className="anger__header">Your Anger Resources</h2>
              </div>
              <div ref={el => {angContent = el}} className="anger__wrap">
                     {angResources.map(resource => {

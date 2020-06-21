@@ -7,6 +7,9 @@
     @include tablet {
         height: 100%;
     }
+    @include desktop-small {
+        padding: 0 $rem-24 0 $rem-24;
+    }
     @include desktop {
         height:100%;
         padding: 0 $rem-48 0 $rem-48;
@@ -17,14 +20,13 @@
         transform: translateY(100%);
         opacity: 0;
         flex-wrap: wrap;
+        padding-top: $rem-16;
         @include desktop-small {
-            height:100%;
-            width: 102%;
+            @include sizing(102%, 100%);
             justify-content: space-between;
         }
         @include desktop {
-            height:100%;
-            width: 103%;
+            @include sizing(103%, 100%);
             justify-content: space-between;
         }
     }
@@ -53,16 +55,13 @@
             height: 560px;
         }
         @include tablet {
-            width:51%;
-            height:560px;
+            @include sizing(51%, 560px);
         }
         @include desktop-small {
-            width:30%;
-            height:575px;
+            @include sizing(30%, 575px);
         }
         @include desktop {
-            width: 30%;
-            height: 585px;
+            @include sizing(30%, 585px);
         }
     }
     &__card-content-ctn {
@@ -125,7 +124,6 @@
         }
         @include desktop {
             font-size:0.9rem;
-            
         }
     }
 }
