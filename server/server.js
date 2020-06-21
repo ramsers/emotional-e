@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const app = express();
 const angerResourcesRoute = require('./routes/anger');
 const anxietyResourcesRoute = require('./routes/anxiety');
@@ -16,19 +17,21 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.get('/', (req, res) => {
     res.send("Hello World")
 })
 
-app.use('/anger', angerResourcesRoute);
+app.use('/api/anger', angerResourcesRoute);
 
-app.use('/anxiety', anxietyResourcesRoute)
+app.use('/api/anxiety', anxietyResourcesRoute)
 
-app.use('/depression', depressionResourcesRoute)
+app.use('/api/depression', depressionResourcesRoute)
 
-app.use('/clicks', anxietyClickRoute)
+app.use('/api/clicks', anxietyClickRoute)
 
-app.use('/journal', notesDataRoute)
+app.use('/api/journal', notesDataRoute)
 
 app.listen(port, ()=> {
     console.log('server is running on 8080');
