@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const clicksData = require('../data/clicks.json');
-const cors =require('cors');
+// const cors =require('cors');
 const bodyParser  = require('body-parser');
 
 router.use(bodyParser.json());
-router.use(cors());
+// router.use(cors());
 
 
 
