@@ -27,7 +27,7 @@ let emotionsCard2 = useRef(null);
 let emotionsCard3 = useRef(null);
 
 useEffect(() => {
-         axios.get(`${API_URL}/api/clicks`,)
+         axios.get(/api/clicks,)
          .then(res => {
                 setAnxietyClick(res.data.anxietyClicks);
                 setAngerClick(res.data.angerClicks);
@@ -85,13 +85,13 @@ useEffect(() => {
     }
 
     let anxietyClick = () => {
-         postRequest(`${API_URL}/api/clicks`, {anxietyClicks: anxiety + 1})
+         postRequest(/api/clicks, {anxietyClicks: anxiety + 1})
      }
      let angerClick = () => {
-         postRequest(`${API_URL}/api/clicks`, {angerClicks: anger + 1})
+         postRequest(/api/clicks, {angerClicks: anger + 1})
      }
     let depressionClick = () => {
-         postRequest(`${API_URL}/api/clicks`, {depressionClicks: depression + 1})
+         postRequest(/api/clicks, {depressionClicks: depression + 1})
      }
         return(
             <>

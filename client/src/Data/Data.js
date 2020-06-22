@@ -11,7 +11,7 @@ const EmotionData = () => {
 
     const chart = () => {
         // Axios call to get and then store data in Variables
-        axios.get(`${API_URL}/api/clicks`)
+        axios.get(/api/clicks)
         .then(res => {
             let anxietyData = res.data.anxietyClicks;
             let angerData = res.data.angerClicks;
