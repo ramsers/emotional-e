@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
- 
-    "scripts": {
-      "start": "node server.js",
-      "server": "nodemon server.js",
-      "client": "npm start --prefix client"
-    },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
