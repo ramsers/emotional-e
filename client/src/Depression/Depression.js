@@ -37,7 +37,7 @@ const Depression = () => {
 
         let source = axios.CancelToken.source();
 
-        axios.get(/api/depression, {cancelToken: source.token})
+        axios.get(`${API_URL}/api/depression`, {cancelToken: source.token})
         .then(res=> {
             // console.log(res.data);
             setDepResources(res.data)

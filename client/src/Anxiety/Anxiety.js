@@ -36,7 +36,7 @@ const Anxiety = () => {
 
         let source = axios.CancelToken.source();
 
-        axios.get(/api/anxiety, {cancelToken: source.token})
+        axios.get(`${API_URL}/api/anxiety`, {cancelToken: source.token})
         .then(res=> {
             setAnxResources(res.data);
         })
