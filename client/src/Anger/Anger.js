@@ -38,7 +38,7 @@ const Anger = () => {
         // Axios Request and Axios Cancel Token
         let source = axios.CancelToken.source();
 
-        axios.get(`${API_URL}/anger`, {cancelToken: source.token})
+        axios.get(`${API_URL}/api/anger`, {cancelToken: source.token})
         .then(res=> {
             setAngResources(res.data)
         })

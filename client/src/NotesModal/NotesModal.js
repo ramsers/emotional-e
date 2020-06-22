@@ -21,7 +21,7 @@ let NotesModal =()=> {
             alert('Please Input A Title andc Note')
         } else {
             newNote.push({title, notes})
-            axios.post(`${API_URL}/journal`, {title:title, notes:notes})
+            axios.post(`${API_URL}/api/journal`, {title:title, notes:notes})
             .then(()=>{
                 setNotes(newNote)
             })
