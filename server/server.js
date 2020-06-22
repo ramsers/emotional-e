@@ -22,9 +22,6 @@ app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.get('/', (req, res) => {
-//     res.send("Hello World")
-// })
 
 app.use(express.static("client/build"));
 ​
@@ -45,7 +42,7 @@ app.use('/api/journal', notesDataRoute)
 
     // Set static folder
 
-app.listen(PORT, ()=> {
-    console.log('server is running on ${PORT}');
+app.listen(port, ()=> {
+    console.log('server is running on ${port}');
 })
 
