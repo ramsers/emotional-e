@@ -1,0 +1,29 @@
+{
+  "name": "raheim-bailey-capstone-emotional-e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "react-modal": "^3.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
+    "start": "npm start --prefix server",
+    "server": "nodemon index --prefix server",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramsers/emotional-e.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramsers/emotional-e/issues"
+  },
+  "homepage": "https://github.com/ramsers/emotional-e#readme"
+}
