@@ -12,7 +12,7 @@ let Journal = () => {
 
         let source = axios.CancelToken.source();
 
-       axios.get(`${API_URL}/api/journal`, {cancelToken: source.token})
+       axios.get(/api/journal, {cancelToken: source.token})
         .then(res=> {
             setJournal(res.data)
         })
