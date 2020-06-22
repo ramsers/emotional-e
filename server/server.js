@@ -4,7 +4,7 @@ const app = express();
 // const logger = require("./middleware/logger");
 const cors = require('cors');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 const angerResourcesRoute = require('./routes/anger');
 const anxietyResourcesRoute = require('./routes/anxiety');
@@ -12,7 +12,7 @@ const depressionResourcesRoute = require ('./routes/depression');
 const anxietyClickRoute = require ('./routes/clicks')
 const notesDataRoute = require('./routes/journal');
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 
 app.use(cors());
