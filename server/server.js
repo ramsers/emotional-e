@@ -23,10 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(express.static("client/build"));
-​
+app.use(express.static("../client"));
+
+
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 
 app.use('/api/anger', angerResourcesRoute);
