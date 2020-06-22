@@ -3,7 +3,7 @@ import './Data.scss';
 import {Pie} from 'react-chartjs-2';
 import axios from 'axios';
 
-const API_URL = 'https://nameless-lowlands-84986.herokuapp.com';
+const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
 
 // Chart Data
 const EmotionData = () => {

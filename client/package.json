@@ -2,7 +2,7 @@
   "name": "raheim-bailey-capstone-emotional-e",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://nameless-lowlands-84986.herokuapp.com:5000",
+  "proxy": "https://stark-stream-18350.herokuapp.com:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

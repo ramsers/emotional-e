@@ -6,7 +6,7 @@ import videoIcon from './DepressionAssets/video-type-icon.svg';
 import NotesModal from '../NotesModal/NotesModal';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = 'https://nameless-lowlands-84986.herokuapp.com';;
+const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
 
 const Depression = () => {
      const [depResources, setDepResources] = useState([]);
