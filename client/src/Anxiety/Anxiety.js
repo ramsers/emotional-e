@@ -6,7 +6,7 @@ import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'https://nameless-lowlands-84986.herokuapp.com';
 
 const Anxiety = () => {
      const [anxResources, setAnxResources] = useState([]);

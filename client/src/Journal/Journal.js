@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Journal.scss';
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'https://nameless-lowlands-84986.herokuapp.com';;
 
 let Journal = () => {
     let [journal, setJournal] = useState([]);
