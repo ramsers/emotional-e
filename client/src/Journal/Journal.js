@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Journal.scss';
 import axios from 'axios';
 
-const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
+// const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
 
 let Journal = () => {
     let [journal, setJournal] = useState([]);
@@ -12,7 +12,7 @@ let Journal = () => {
 
         let source = axios.CancelToken.source();
 
-       axios.get(`${API_URL}/api/journal`, {cancelToken: source.token})
+       axios.get('/api/journal', {cancelToken: source.token})
         .then(res=> {
             setJournal(res.data)
         })

@@ -44,8 +44,6 @@ app.use('/api/journal', notesDataRoute)
 
 
     // Set static folder
-  
-  
 
 app.listen(PORT, ()=> {
     console.log('server is running on ${PORT}');
