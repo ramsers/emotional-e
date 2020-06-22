@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require("path");
 const app = express();
-const logger = require("./middleware/logger");
+// const logger = require("./middleware/logger");
 const cors = require('cors');
 
 require('dotenv').config();
@@ -17,7 +17,7 @@ const port = process.env.PORT || 5000
 
 app.use(cors());
 
-app.use(logger);
+// app.use(logger);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
