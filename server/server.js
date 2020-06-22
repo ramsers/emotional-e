@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require("path");
+const logger = require('./middleware/logger');
 const app = express();
 const angerResourcesRoute = require('./routes/anger');
 const anxietyResourcesRoute = require('./routes/anxiety');
@@ -14,6 +15,8 @@ const port = process.env.PORT || 3000
 
 
 app.use(cors());
+
+app.use(logger);
 
 app.use(express.json());
 
