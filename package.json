@@ -1,6 +1,6 @@
 {
   "name": "raheim-bailey-capstone-emotional-e",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "server.js",
   "dependencies": {
@@ -14,7 +14,8 @@
     "client": "npm start --prefix client",
     "start": "npm start --prefix server",
     "server": "nodemon index --prefix server",
-    "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",

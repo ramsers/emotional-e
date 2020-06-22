@@ -6,7 +6,7 @@ import articleIcon from './AnxietyAssets/article-type-icon.svg';
 import videoIcon from './AnxietyAssets/video-type-icon.svg';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
 
 const Anxiety = () => {
      const [anxResources, setAnxResources] = useState([]);
@@ -36,7 +36,7 @@ const Anxiety = () => {
 
         let source = axios.CancelToken.source();
 
-        axios.get(`${API_URL}/api/anxiety`, {cancelToken: source.token})
+        axios.get('/api/anxiety', {cancelToken: source.token})
         .then(res=> {
             setAnxResources(res.data);
         })
