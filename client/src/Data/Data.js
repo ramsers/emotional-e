@@ -3,7 +3,7 @@ import './Data.scss';
 import {Pie} from 'react-chartjs-2';
 import axios from 'axios';
 
-// const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Chart Data
 const EmotionData = () => {
@@ -11,7 +11,7 @@ const EmotionData = () => {
 
     const chart = () => {
         // Axios call to get and then store data in Variables
-        axios.get('/api/clicks')
+        axios.get(`${API_URL}/api/clicks`)
         .then(res => {
             let anxietyData = res.data.anxietyClicks;
             let angerData = res.data.angerClicks;

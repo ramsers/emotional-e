@@ -2,17 +2,16 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Journal.scss';
 import axios from 'axios';
 
-// const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 let Journal = () => {
     let [journal, setJournal] = useState([]);
-    let notesCtn = useRef(null)
 
     useEffect(()=> {
 
         let source = axios.CancelToken.source();
 
-       axios.get('/api/journal', {cancelToken: source.token})
+       axios.get(`${API_URL}/api/journal`, {cancelToken: source.token})
         .then(res=> {
             setJournal(res.data)
         })

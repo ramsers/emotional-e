@@ -6,7 +6,7 @@ import videoIcon from './AngerAssets/video-type-icon.svg';
 import NotesModal from '../NotesModal/NotesModal';
 import {TweenMax, Power3} from 'gsap';
 
-// const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Anger = () => {
      const [angResources, setAngResources] = useState([]);
@@ -38,7 +38,7 @@ const Anger = () => {
         // Axios Request and Axios Cancel Token
         let source = axios.CancelToken.source();
 
-        axios.get('/api/anger', {cancelToken: source.token})
+        axios.get(`${API_URL}/api/anger`, {cancelToken: source.token})
         .then(res=> {
             setAngResources(res.data)
         })

@@ -5,12 +5,12 @@ const { v4: uuidv4} = require('uuid');
 const fs = require('fs');
 var data = fs.readFileSync('./data/notes.json');
 var notes =JSON.parse(data);
-console.log(notes)
-// const cors =require('cors');
+
+const cors =require('cors');
 const bodyParser  = require('body-parser');
 
 router.use(bodyParser.json());
-// router.use(cors());
+router.use(cors());
 
 router.get('/', (req, res)=> {
     res.json(notesData)

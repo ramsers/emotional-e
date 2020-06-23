@@ -4,7 +4,7 @@ import './NotesModal.scss';
 import noteAdd from './NotesModalAssets/addNote.svg';
 import axios from 'axios';
 
-const API_URL = "https://stark-stream-18350.herokuapp.com:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 let NotesModal =()=> {
     const [modalIsOpen, setModalIsOpen] = useState(false)

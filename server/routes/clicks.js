@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const clicksData = require('../data/clicks.json');
-// const cors =require('cors');
+const cors =require('cors');
 const bodyParser  = require('body-parser');
 
 router.use(bodyParser.json());
-// router.use(cors());
+router.use(cors());
 
 
 
@@ -14,21 +14,6 @@ router.get("/", (req,res)=> {
     res.json(clicksData);
 })
 
-// router.post('/', (req, res)=> {
-//     let data = JSON.stringify(req.body);
-//     // clicksData.anxietyClicks = data.count
-//     // let anxClickData =  clicksData.anxietyClicks
-//     fs.writeFile(clicksData, 'utf8', function(err) {
-//         if(err) {
-//             res.status(500).json({error: 'Failed to write file'})
-//         }
-//         res.status(201).json({
-//             success: true,
-//             "clicks": clicksData
-//         })
-//     })
-
-// })
 
 router.post('/', (req, res) => {
     let data = JSON.stringify(req.body)
@@ -46,17 +31,5 @@ router.post('/', (req, res) => {
   });
 
 
-//   router.post('/', (req, res) => {
-//     let data = JSON.stringify(req.body)
-//     const newData = clicksData;
-//     newData.anxietyClicks = req.body.anxietyClicks;
-//     console.log(data)
-//     // 
-//     fs.writeFile('./data/clicks.json', JSON.stringify(newData), () => {
-//       res.status(201).json({
-//                       success: true,
-//                       anxietyClicks: newData.anxietyClicks
-//                   })
-//     });
-//   });
+
 module.exports = router;
