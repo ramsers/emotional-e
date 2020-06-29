@@ -19,19 +19,28 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'client')));
 
-app.get('/api', (req, res) => {
-    res.send("Hello World")
-})
+// app.get('/api', (req, res) => {
+//     res.send("Hello World")
+// })
 
 app.use('/api/anger', angerResourcesRoute);
 
-app.use('/api/anxiety', anxietyResourcesRoute)
+app.use('/api/anxiety', anxietyResourcesRoute);
 
-app.use('/api/depression', depressionResourcesRoute)
+app.use('/api/depression', depressionResourcesRoute);
 
-app.use('/api/clicks', anxietyClickRoute)
+app.use('/api/clicks', anxietyClickRoute);
 
-app.use('/api/journal', notesDataRoute)
+app.use('/api/journal', notesDataRoute);
+
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("../client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 app.listen(port, ()=> {
     console.log(`server is running on ${port}`);
