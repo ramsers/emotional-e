@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Journal.scss';
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
 
 let Journal = () => {
     let [journal, setJournal] = useState([]);
@@ -11,7 +11,7 @@ let Journal = () => {
 
         let source = axios.CancelToken.source();
 
-       axios.get(`${API_URL}/api/journal`, {cancelToken: source.token})
+       axios.get('/api/journal', {cancelToken: source.token})
         .then(res=> {
             setJournal(res.data)
         })

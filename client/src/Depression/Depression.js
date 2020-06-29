@@ -6,7 +6,7 @@ import videoIcon from './DepressionAssets/video-type-icon.svg';
 import NotesModal from '../NotesModal/NotesModal';
 import {TweenMax, Power3} from 'gsap';
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
 
 const Depression = () => {
      const [depResources, setDepResources] = useState([]);
@@ -37,7 +37,7 @@ const Depression = () => {
 
         let source = axios.CancelToken.source();
 
-        axios.get(`${API_URL}/api/depression`, {cancelToken: source.token})
+        axios.get('/api/depression', {cancelToken: source.token})
         .then(res=> {
             // console.log(res.data);
             setDepResources(res.data)
