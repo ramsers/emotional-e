@@ -26,7 +26,7 @@ let currDate = () => {
     return `${day}/${month}/${year}`
 }
 
-router.post('/api', (req, res)=> {
+router.post('/', (req, res)=> {
 
     if(!req.body.title || !req.body.notes) {
         res.status(404).json("Your note title or description is empty")
