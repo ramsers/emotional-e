@@ -4,7 +4,7 @@ const notesData = require('../data/notes.json');
 const { v4: uuidv4} = require('uuid');
 const fs = require('fs');
 var data = fs.readFileSync('./data/notes.json');
-var notes =JSON.parse(data);
+// var notes =JSON.parse(data);
 
 const cors =require('cors');
 const bodyParser  = require('body-parser');
@@ -12,7 +12,7 @@ const bodyParser  = require('body-parser');
 router.use(bodyParser.json());
 router.use(cors());
 
-router.get('/', (req, res)=> {
+router.get('/api', (req, res)=> {
     res.json(notesData)
 })
 
@@ -26,7 +26,7 @@ let currDate = () => {
     return `${day}/${month}/${year}`
 }
 
-router.post('/', (req, res)=> {
+router.post('/api', (req, res)=> {
 
     if(!req.body.title || !req.body.notes) {
         res.status(404).json("Your note title or description is empty")
