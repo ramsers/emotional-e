@@ -10,7 +10,7 @@ const cors = require('cors');
 
 require('dotenv').config();
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT 
 
 
 app.use(cors());
@@ -19,9 +19,9 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'client')));
 
-// app.get('/api', (req, res) => {
-//     res.send("Hello World")
-// })
+app.get('/api', (req, res) => {
+    res.send("Hello World")
+})
 
 app.use('/api/anger', angerResourcesRoute);
 
@@ -33,14 +33,14 @@ app.use('/api/clicks', anxietyClickRoute);
 
 app.use('/api/journal', notesDataRoute);
 
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("../client/build"));
+// if (process.env.NODE_ENV === "production") {
+//   // Set static folder
+//   app.use(express.static("../client/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+//   });
+// }
 
 app.listen(port, ()=> {
     console.log(`server is running on ${port}`);

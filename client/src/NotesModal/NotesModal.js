@@ -4,7 +4,7 @@ import './NotesModal.scss';
 import noteAdd from './NotesModalAssets/addNote.svg';
 import axios from 'axios';
 
-// const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 let NotesModal =()=> {
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -21,7 +21,7 @@ let NotesModal =()=> {
             alert('Please Input A Title and Note')
         } else {
             newNote.push({title, notes})
-            axios.post('/api/journal', {title:title, notes:notes})
+            axios.post(`${API_URL}/api/journal`, {title:title, notes:notes})
             .then(()=>{
                 setNotes(newNote)
             })
