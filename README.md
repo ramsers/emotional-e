@@ -1,4 +1,4 @@
 # emotional-e
 
 
-<h1>Emotional E</h1>
+<h2>An app that provides resources, tracking, & journal tool</h2>
