@@ -12,7 +12,7 @@
   <li>Track they're emotional data via a chart that catalogs each click</li>
 </ul>
 
-<h3>Created Using/h3>
+<h3>Created Using</h3>
 
 <ul>
   <li>React</li>
